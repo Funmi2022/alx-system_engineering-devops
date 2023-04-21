@@ -13,11 +13,11 @@ server_config=\
 frontend  Funmi-frontend
         bind *:80
         mode http
-        default_backend Funmi-backend
 backend Funmi-backend
         balance roundrobin
         server 149356-web-01 52.86.82.154  check
         server 149356-web-02 54.158.187.235 check
+	port 80
 "
 echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
 
